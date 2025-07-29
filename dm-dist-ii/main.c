@@ -63,6 +63,8 @@ extern ubit32 memory_total_alloc;
 #define OPT_USEC 250000L       /* time delay corresponding to 4 passes/sec */
 #define HEAPSPACE_INCREMENT 500
 
+#include "gettimeofday.c" // prool fool
+
 /* structures */
 struct eventq_elem
 {
@@ -115,8 +117,6 @@ void boot_db(void);
 #if defined(SOLARIS) || defined(HPUX)
   void srand48(long seedval);
 #endif
-
-int gettimeofday(struct timeval *tp, struct timezone *tzp);
 
 /* local functions */
 void run_the_game(void);
